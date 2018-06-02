@@ -1,0 +1,20 @@
+
+<div class="container">
+  <% while @i < @mobileNo.size  %>
+    
+      <form class="form-inline" action="/home/index" method="post">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              <%= @regionName[@i] %> | <%= @stationName[@i] %>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">정류장 번호 : <%= @stationId[@i] %> <%= @mobileNo[@i] %></li>
+              <li class="list-group-item"><%= @x[@i] %>,<%= @y[@i] %></li>
+              <button type="submit" class="btn btn-primary mb-2">찾기</button>
+            </ul>
+          </div>
+        <input type="hidden" id="stationId" name="stationId" value="<%=@stationId[@i]%>">
+      </form>
+    <% @i +=1 %>
+  <% end %>
+</div>

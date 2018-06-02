@@ -1,0 +1,31 @@
+
+<h3>오늘 날씨</h3>
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">시간</th>
+          <% @weather.w_time.each do |t| %>
+              <th scope="col"><%= t %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">온도</th>
+          <% @weather.w_temp.each do |t| %>
+              <td><%= t %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <th scope="row">날씨</th>
+          <% @weather.w_weather.each do |w| %>
+              <td><%= w %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+ </div>
+
+<div class="alert alert-secondary" role="alert"><%= @mise.mise_info %></div>
+<div class="alert alert-info" role="alert"><%= @mise.ozone_info %></div>

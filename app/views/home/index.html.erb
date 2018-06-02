@@ -1,0 +1,55 @@
+<%= @now_temp.pop %>
+<% @weather %>
+
+<%= @time.size %>
+<%= @temp.size %>
+<%= @weather.size %>
+
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">시간</th>
+          <% @time.each do |t| %>
+              <th scope="col"><%= t %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">온도</th>
+          <% @temp.each do |t| %>
+              <td><%= t %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <th scope="row">날씨</th>
+          <% @weather.each do |w| %>
+              <td><%= w %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<div class="container">
+<% if @routeId != nil %>
+    <% while @i < @routeId.size  %>
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            버스 번호 : <% @routeId[@i] %> <%= @routeName[@i] %>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= @locationNo1[@i] %>정류장 전 (약 <%= @predictTime1[@i] %>분)</li>
+            <li class="list-group-item"><%= @locationNo2[@i] %>정류장 전 (약 <%= @predictTime2[@i] %>분)</li>
+            <li class="list-group-item">버스 정보 입력 칸</li>
+          </ul>
+        </div>
+      <% @i +=1 %>
+    <% end %>
+<% end %>
+  <form class="form-inline" action="/home/searchStationId" method="post">
+    <label class="sr-only" for="station_name">정류장명</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="station_name" name="station_name" placeholder="정류장명">
+    <button type="submit" class="btn btn-primary mb-2">찾기</button>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mise_info: MyText
+  ozone_info: MyText
+
+two:
+  mise_info: MyText
+  ozone_info: MyText

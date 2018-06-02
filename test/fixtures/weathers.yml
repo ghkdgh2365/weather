@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  region_name: MyString
+  x_value: MyString
+  y_value: MyString
+  check_value: MyString
+  w_time: MyText
+  w_temp: MyText
+  w_weather: MyText
+
+two:
+  city: MyString
+  region_name: MyString
+  x_value: MyString
+  y_value: MyString
+  check_value: MyString
+  w_time: MyText
+  w_temp: MyText
+  w_weather: MyText
